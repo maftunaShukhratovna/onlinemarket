@@ -44,6 +44,12 @@ class CategoryResource extends ModelResource
             Box::make([
 //                ID::make(),
                 Text::make('Name','name'),
+                BelongsTo::make(
+                    'Category',
+                    'parent',
+                    fn($item)=>"$item->id",
+                    CategoryResource::class)
+                    ->afterFill(fn($field) => $field->setColumn('id'))->nullable(),
             ])
         ];
     }
