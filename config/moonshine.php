@@ -96,4 +96,13 @@ return [
     'locales' => [
         // en
     ],
+
+    // Resources
+    'resources' => [
+        App\MoonShine\Resources\PostResource::class,
+        App\MoonShine\Resources\PostCategoryResource::class,
+    ],
+
+    
+
 ];
